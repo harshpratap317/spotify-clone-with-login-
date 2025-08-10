@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify login page</title>
+    <style>
+        body {
+            background-image:url("./img/img3.jpeg") ;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            /* flex-direction: column; */
+            align-items: center;
+            justify-content: center;
+            /* background: #232222; */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .logi {
+            
+            filter: invert();
+            
+            /* background: rgb(198, 195, 195); */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            width: 350px;
+            animation: fadeIn 0.4s ease-in-out;
+            background: rgba();
+        }
+
+        .logi h3 {
+            font-weight: bold;
+            font-size: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        label{
+            /* opacity: 1.0; */
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 6px;
+            outline: none;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            font-size: 14px;
+        }
+
+        /* button {
+            padding: 8px 12px;
+            margin-top: 10px;
+            cursor: pointer;
+        } */
+        .logi .botton {
+            background: #444;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            /* opacity: .8; */
+        }
+        .botton:hover{
+            background: #000;
+            box-shadow:0 0 8px rgba(214, 11, 11, 0.4); ;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="logi">
+        <h3>Login</h3>
+        <img src=".img/img3" alt="" srcset="">
+        <label>Username:</label>
+        <input type="text" id="username" placeholder="Enter username">
+
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+
+        <button class="botton" id="confirmBtn">Confirm</button>
+    </div>
+
+    <script>
+        document.getElementById("confirmBtn").addEventListener("click", function () {
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            if (username === "" || password === "") {
+                alert("Please fill in both fields.");
+                return;
+            }
+
+            // Example hardcoded check (replace with actual authentication)
+            if (username === "admin" && password === "12345") {
+                alert("Login successful!");
+                window.location.href = "index.html"; // Redirect after success
+            } else {
+                alert("Invalid username or password.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
